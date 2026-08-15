@@ -2,36 +2,43 @@
 	'use strict';
 
 	function appendLog( lines ) {
-		var $log = $( '#ads-log' );
+		var $log = $( '#dsa-log' );
 		var text = Array.isArray( lines ) ? lines.join( '\n' ) : String( lines );
 		$log.text( $log.text() + ( $log.text() ? '\n' : '' ) + text );
 		$log.scrollTop( $log[ 0 ].scrollHeight );
 	}
 
+	function clearLog() {
+		$( '#dsa-log' ).text( '' );
+	}
+
 	$( function () {
+		$( '#dsa-log-clear' ).on( 'click', clearLog );
+
 		// Tabs.
 		$( '.nav-tab-wrapper a' ).on( 'click', function ( e ) {
 			e.preventDefault();
 			var tab = $( this ).data( 'tab' );
 			$( '.nav-tab-wrapper a' ).removeClass( 'nav-tab-active' );
 			$( this ).addClass( 'nav-tab-active' );
-			$( '.ads-tab-panel' ).hide();
-			$( '#ads-tab-' + tab ).show();
+			$( '.dsa-tab-panel' ).hide();
+			$( '#dsa-tab-' + tab ).show();
 		} );
 
-		$( '#ads-build-btn' ).on( 'click', function () {
+		$( '#dsa-build-btn' ).on( 'click', function () {
 			var $btn = $( this ).prop( 'disabled', true );
-			$( '#ads-build-spinner' ).addClass( 'is-active' );
+			$( '#dsa-build-spinner' ).addClass( 'is-active' );
+			clearLog();
 			appendLog( '--- Build started ---' );
 
-			$.post( adsScraper.ajaxUrl, {
+			$.post( dsaScraper.ajaxUrl, {
 				action: 'ads_scraper_build',
-				nonce: adsScraper.buildNonce
+				nonce: dsaScraper.buildNonce
 			} ).done( function ( resp ) {
 				if ( resp.success ) {
 					appendLog( resp.data.log );
 					appendLog( 'Done: ' + resp.data.pages + ' page(s), ' + resp.data.warnings.length + ' warning(s).' );
-					$( '#ads-push-btn' ).prop( 'disabled', false );
+					$( '#dsa-push-btn' ).prop( 'disabled', false );
 				} else {
 					appendLog( 'Build failed: ' + ( resp.data && resp.data.message ? resp.data.message : 'unknown error' ) );
 				}
@@ -39,21 +46,22 @@
 				appendLog( 'Build request failed: ' + xhr.status + ' ' + xhr.statusText );
 			} ).always( function () {
 				$btn.prop( 'disabled', false );
-				$( '#ads-build-spinner' ).removeClass( 'is-active' );
+				$( '#dsa-build-spinner' ).removeClass( 'is-active' );
 			} );
 		} );
 
-		$( '#ads-push-btn' ).on( 'click', function () {
-			if ( ! window.confirm( adsScraper.confirmPush ) ) {
+		$( '#dsa-push-btn' ).on( 'click', function () {
+			if ( ! window.confirm( dsaScraper.confirmPush ) ) {
 				return;
 			}
 			var $btn = $( this ).prop( 'disabled', true );
-			$( '#ads-push-spinner' ).addClass( 'is-active' );
+			$( '#dsa-push-spinner' ).addClass( 'is-active' );
+			clearLog();
 			appendLog( '--- Push started ---' );
 
-			$.post( adsScraper.ajaxUrl, {
+			$.post( dsaScraper.ajaxUrl, {
 				action: 'ads_scraper_push',
-				nonce: adsScraper.pushNonce
+				nonce: dsaScraper.pushNonce
 			} ).done( function ( resp ) {
 				var data = resp.data || {};
 				appendLog( data.log || [] );
@@ -66,7 +74,7 @@
 				appendLog( 'Push request failed: ' + xhr.status + ' ' + xhr.statusText );
 			} ).always( function () {
 				$btn.prop( 'disabled', false );
-				$( '#ads-push-spinner' ).removeClass( 'is-active' );
+				$( '#dsa-push-spinner' ).removeClass( 'is-active' );
 			} );
 		} );
 	} );
