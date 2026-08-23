@@ -2,6 +2,7 @@
 title: "My Beef and Potatoes"
 layout: food
 date: 2026-08-15
+image: bp.jpeg
 excerpt: >-
   This is a beef and potatoes recipe that I found on TikTok. I've been using
   this website to both share my recipes with friends and keep open on my
