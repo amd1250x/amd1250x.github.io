@@ -1,0 +1,47 @@
+// Header
+
+.site-header {
+  padding: 20px 0;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: $text;
+  text-decoration: none;
+}
+
+.site-nav {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  a {
+    font-weight: 600;
+    color: $text;
+    text-decoration: none;
+
+    &:hover,
+    &.current {
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

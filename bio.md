@@ -2,7 +2,11 @@
 layout: 2-column
 title: Bio
 permalink: /bio/
-image: bio.jpeg
+columns:
+  - type: image
+    image: bio.jpeg
+  - type: text
+  
 ---
 
 I am a software engineer based in the Minneapolis-Saint Paul area with experience in web development, development operations, and system administration.

@@ -1,0 +1,12 @@
+// Footer
+
+.site-footer {
+  padding: 24px 0;
+  color: $muted;
+  font-size: 14px;
+
+  .wrap {
+    display: flex;
+    gap: 8px;
+  }
+}

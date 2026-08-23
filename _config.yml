@@ -6,6 +6,7 @@ url: "https://aarondsamakes.com"
 sass:
   style: compressed
   sass_dir: assets/css
+  sourcemap: always
 
 permalink: pretty
 
