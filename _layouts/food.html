@@ -12,7 +12,7 @@
     <main class="wrap">
       <h1 class="post-title">{{ page.title }}</h1>
       {% if page.image %}
-        <img class="col-left-image" src="{{ '/assets/img/' | append: page.image | relative_url }}"/>
+        <img class="col-image" src="{{ '/assets/img/' | append: page.image | relative_url }}"/>
       {% endif %}
       {{ content }}
     </main>
