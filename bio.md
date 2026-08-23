@@ -1,6 +1,6 @@
 ---
 layout: 2-column
-title: Bio
+title: bio
 permalink: /bio/
 columns:
   - type: image

@@ -24,7 +24,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $accent;
+      text-decoration: underline;
     }
   }
 }
@@ -63,7 +63,7 @@
     color: $muted;
 
     &:hover {
-      color: $accent;
+      text-decoration: underline;
     }
   }
 }
