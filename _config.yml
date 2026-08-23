@@ -3,6 +3,9 @@ description: >-
   Recipes and occasional tech notes from Aaron, a software engineer in the
   Minneapolis-Saint Paul area.
 url: "https://aarondsamakes.com"
+sass:
+  style: compressed
+  sass_dir: assets/css
 
 permalink: pretty
 
