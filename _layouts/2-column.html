@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="two-column">
+  <aside class="col-left">
+    {% if page.image %}
+      <img class="col-left-image" src="{{ '/assets/img/' | append: page.image | relative_url }}" alt="{{ page.display_name | default: site.title }}">
+    {% endif %}
+  </aside>
+
+  <div class="col-right">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {{ content }}
+  </div>
+</div>

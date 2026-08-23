@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        {% include nav.html %}
+      </div>
+    </header>
+    <main class="wrap">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.image %}
+        <img class="col-left-image" src="{{ '/assets/img/' | append: page.image | relative_url }}"/>
+      {% endif %}
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>Copyright {{ site.time | date: '%Y' }}</span>
+        <span>{{ site.title }}</span>
+      </div>
+    </footer>
+  </body>
+</html>

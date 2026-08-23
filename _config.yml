@@ -1,0 +1,19 @@
+title: aarondsamakes.com
+description: >-
+  Recipes and occasional tech notes from Aaron, a software engineer in the
+  Minneapolis-Saint Paul area.
+url: "https://aarondsamakes.com"
+
+permalink: pretty
+
+collections:
+  food:
+    output: true
+    permalink: /food/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: food
+    values:
+      layout: post
