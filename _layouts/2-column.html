@@ -9,7 +9,6 @@ layout: default
           <img class="col-image" src="{{ '/assets/img/' | append: col.image | relative_url }}" alt="{{ page.display_name | default: site.title }}">
         {% endif %}
       {% else %}
-        <h1 class="page-title">{{ page.title }}</h1>
         {{ content }}
       {% endif %}
     </div>
