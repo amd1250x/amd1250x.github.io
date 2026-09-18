@@ -4,7 +4,7 @@ title: bio
 permalink: /bio/
 columns:
   - type: image
-    image: bio.jpeg
+    image: bio.webp
   - type: text
   
 ---

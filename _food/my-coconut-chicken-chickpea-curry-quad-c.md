@@ -2,7 +2,7 @@
 title: "My Coconut Chicken Chickpea Curry (Quad C)"
 layout: food
 date: 2026-03-24
-image: cccc.jpeg
+image: cccc.webp
 excerpt: >-
   This is a recipe that I keep finding myself coming back to and am able to
   just not get tired of, so I decided to write up my process for this recipe
