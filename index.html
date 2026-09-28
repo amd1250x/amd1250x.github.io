@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 <ul class="post-list">
-  {% assign posts = site.food | sort: "date" | reverse %}
+  {% assign posts = site.food | concat: site.blog | sort: "date" | reverse %}
   {% for post in posts %}
     <li class="post-list-item">
       <h2 class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>

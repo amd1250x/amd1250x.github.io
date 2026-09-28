@@ -14,6 +14,9 @@ collections:
   food:
     output: true
     permalink: /food/:name/
+  blog:
+    output: true
+    permalink: /blog/:name/
 
 defaults:
   - scope:
